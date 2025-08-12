@@ -1,9 +1,0 @@
-apiVersion: "otus.homework/v1"
-kind: MySQL
-metadata:
-  name: mysql-db
-spec:
-  image: mysql:latest
-  database: test
-  password: test
-  storage_size: 10G
