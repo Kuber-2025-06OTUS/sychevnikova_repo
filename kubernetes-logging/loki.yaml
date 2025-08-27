@@ -30,7 +30,7 @@ loki:
         admin: otussychevnikova
     s3:
       # s3 URL can be used to specify the endpoint, access key, secret key, and bucket name this works well for S3 compatible storages or are hosting Loki on-premises and want to use S3 as the storage backend. Either use the s3 URL or the individual fields below (AWS endpoint, region, secret).
-      s3: s3://YCAJElQ1p3dJjfrBKQtn624-s:YCPzJNjpdlJXLXdRJyq8MFMAaRog0N72FJj9OSEC@storage.yandexcloud.net/otussychevnikova
+      s3: s3://YCAJElQ1p3dJjfrBKQtn624-s:secret_key@storage.yandexcloud.net/otussychevnikova
   auth_enabled: false
 
 minio:
