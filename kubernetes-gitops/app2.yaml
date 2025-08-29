@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: k-template
+  namespace: argocd
+spec:
+  project: otus
+  source:
+    repoURL: https://github.com/Kuber-2025-02OTUS/sychevnikova_repo.git
+    targetRevision: main
+    path: kubernetes-templating/webserver
+    helm:
+      valueFiles:
+      - ../values.yaml
+      parameters:
+      - name: "replicaCount"
+        value: "1"
+      - name: "namespace"
+        value: homeworkhelm
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: homeworkhelm
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+    - CreateNamespace=true
