@@ -1,0 +1,4 @@
+server:
+  replicas: 3
+global:
+  image: hashicorp/consul-k8s-control-plane:latest
