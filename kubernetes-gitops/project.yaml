@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: otus
+  namespace: argocd
+  # Finalizer that ensures that project is not deleted until it is not referenced by any application
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  # Project description
+  description: otus project
+
+  sourceRepos:
+  - 'https://github.com/Kuber-2025-02OTUS/sychevnikova_repo'
+
+  destinations:
+  - name: in-cluster
+    server: https://kubernetes.default.svc
+    namespace: homewor*
+
+  clusterResourceWhitelist:
+  - group: ''
+    kind: "Namespace"
+

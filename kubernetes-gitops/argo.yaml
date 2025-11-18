@@ -1,0 +1,9 @@
+global:
+  nodeSelector:
+    noderole: "infra"
+  tolerations:
+    - key: "node-role"
+      operator: "Equal"
+      value: "infra"
+      effect: "NoSchedule"
+
